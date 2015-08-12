@@ -2,7 +2,6 @@ Public iniTime, endTime As Variant
 
 Sub TareasRegion()
     Dim Dict1, Dict2, Dict3, WSF As Object
-    Dim varray As Variant, element As Variant
     Dim rng As Range
     Set WSF = WorksheetFunction
 
@@ -91,14 +90,13 @@ Sub TareasRegion()
     ' activo el refresco de pantalla
     Application.ScreenUpdating = True
 
-    ' llama a la rutina de DGOificacion
+    ' llama a la rutina de Certificacion
     Certifica
 End Sub
 
 
 Sub Certifica()
     Dim Dict3, WSF As Object
-    Dim varray As Variant, element As Variant
     Dim rng As Range
     Dim hoy, FFin As Date
     
@@ -191,7 +189,8 @@ Sub Certifica()
         ' reinicia la variable nBar
         nBar = Null
     Next n
-	'cierra el fichero de LOG
+	
+    'cierra el fichero de LOG
 	a.writeline "Fin de la lectura"
 	a.close
 	Shell "notepad.exe " & fileLog, vbNormalFocus
